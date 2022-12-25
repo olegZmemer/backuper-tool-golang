@@ -1,10 +1,8 @@
-package main
+package types
 
 import "time"
 
-type Backuper struct{}
-
-const configPath = "/etc/backuper/config.json"
+const ConfigPath = "/etc/backuper/config.json"
 
 const (
 	InitCommand = "init"

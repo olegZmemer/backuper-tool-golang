@@ -1,6 +1,7 @@
 package main
 
 import (
+	handlers "backuper-tool/cmd/handlers"
 	"bytes"
 	"fmt"
 	"log"
@@ -24,7 +25,9 @@ func main() {
 	}
 
 	if len(args) != 0 {
-		commandHandler(args[0])
+		backuper := handlers.Backuper{}
+
+		backuper.CommandHandler(args[0])
 	} else {
 		fmt.Println("use arguments:\ninit \nadd \nlist ")
 		return
@@ -55,19 +58,4 @@ func Exists(filePath string) bool {
 	}
 
 	return true
-}
-
-func commandHandler(firstArg string, args ...[]string) {
-	backuper := Backuper{}
-
-	switch firstArg {
-	case InitCommand:
-		backuper.InitConfig()
-	case AddCommand:
-		backuper.Add("first", "hello", "213")
-	case ListCommand:
-		fmt.Println("List")
-	default:
-		fmt.Println("There is no such command.")
-	}
 }
