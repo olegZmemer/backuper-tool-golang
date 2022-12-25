@@ -17,13 +17,4 @@ func main() {
 		fmt.Println("use arguments:\ninit \nadd \nlist ")
 		return
 	}
-
-}
-
-func Exists(filePath string) bool {
-	if _, err := os.Stat(filePath); os.IsNotExist(err) {
-		return false
-	}
-
-	return true
 }
