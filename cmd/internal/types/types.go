@@ -9,6 +9,7 @@ const (
 	AddCommand    = "add"
 	ListCommand   = "list"
 	RemoveCommand = "remove"
+	ExecCommnad   = "exec"
 )
 
 type ConfigStructure struct {

@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func (b *Backuper) Remove(name string) error {
+func (b *Backuper) Remove(args []string) error {
 	// read file
 	configStrct := &types.ConfigStructure{}
 	utils.ReadFileAsJson(configStrct)
@@ -15,8 +15,9 @@ func (b *Backuper) Remove(name string) error {
 	instances := *configStrct.Instances
 
 	for i, v := range instances {
-		if v.Name == name {
-			instances = append(instances[:i], instances[i+1:]...)
+		if v.Name == args[1] {
+			instances[i] = instances[len(instances)-1]
+			instances = instances[:len(instances)-1]
 		}
 	}
 

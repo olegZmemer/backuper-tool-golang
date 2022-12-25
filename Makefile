@@ -11,4 +11,10 @@ list: build
 	sudo ./backuper list
 
 remove: build
-	sudo ./backuper remove
+	sudo ./backuper remove 
+
+exec: build
+	sudo ./backuper exec  
+
+bin:
+	sudo cp ./backuper /usr/local/bin
