@@ -5,9 +5,10 @@ import "time"
 const ConfigPath = "/etc/backuper/config.json"
 
 const (
-	InitCommand = "init"
-	AddCommand  = "add"
-	ListCommand = "list"
+	InitCommand   = "init"
+	AddCommand    = "add"
+	ListCommand   = "list"
+	RemoveCommand = "remove"
 )
 
 type ConfigStructure struct {

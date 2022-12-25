@@ -12,9 +12,11 @@ func (b *Backuper) CommandHandler(firstArg string, args ...[]string) {
 	case types.InitCommand:
 		b.InitConfig()
 	case types.AddCommand:
-		b.Add("first", "hello", "213")
+		b.Add("third", "hello!!!!!!", "31213")
 	case types.ListCommand:
-		fmt.Println("List")
+		b.List()
+	case types.RemoveCommand:
+		b.Remove("new")
 	default:
 		fmt.Println("There is no such command.")
 	}
